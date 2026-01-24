@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jessie Math - 速率大挑戰PRO</title>
+
+    <!-- ✅ 快取連結預覽（控制預覽卡片那行文字；很多平台會抓這個） -->
+    <meta name="description" content="© 2025–2026 Jessie Math 捷析老師. All rights reserved.">
+    <!-- ✅ LINE / FB 常抓這個（預覽卡片的描述文字） -->
+    <meta property="og:description" content="© 2025–2026 Jessie Math 捷析老師. All rights reserved.">
+
+    <!-- ✅ 快取連結預覽（請放在 <head> 裡） -->
+    <meta property="og:title" content="Jessie Math - 速率大挑戰PRO">
+    <meta property="og:type" content="website">
+
+    <!-- ✅ 預覽圖片（把檔名換成你的主題圖，例如 g6-u12-1.png） -->
+    <meta property="og:image" content="g6-u12-1.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1536">
+    <meta property="og:image:alt" content="Jessie Math 遊戲封面">
+
+    <!-- ✅ 有些平台會參考 -->
+    <link rel="image_src" href="g6-u12-1.png">
+
+    <!-- ✅ Twitter / X（可用同一張圖） -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jessie Math - 速率大挑戰PRO">
+    <meta name="twitter:description" content="© 2025–2026 Jessie Math 捷析老師. All rights reserved.">
+    <meta name="twitter:image" content="g6-u12-1.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- 全局設定 --- */
+        :root {
+            --primary-color: #F4D03F; /* Jessie Math 品牌黃 */
+            --text-color: #333333;    /* 品牌深灰/黑 */
+            --accent-color: #E74C3C;
+            --blue-accent: #5DADE2;   /* 截圖中的藍色 */
+            --bg-color: #f9f9f9;
+            --header-height: 80px;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Header / Hero 區域 (依截圖修改) --- */
+        header {
+            background-color: #fff;
+            height: var(--header-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            gap: 16px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-width: 180px;
+        }
+
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            flex: 0 0 auto;
+        }
+
+        .logo-circle img {
+            width: 85%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .brand-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-color);
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        /* 一般導航按鈕 */
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: #666;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        .nav-item:hover {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* 特殊藍色外框按鈕 (截圖樣式) */
+        .nav-btn-outline {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: #4a69bd;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 6px 15px;
+            border: 1.5px solid #4a69bd;
+            border-radius: 50px;
+            transition: all 0.3s;
+            background: white;
+            white-space: nowrap;
+        }
+        .nav-btn-outline:hover {
+            background-color: #4a69bd;
+            color: white;
+            box-shadow: 0 4px 10px rgba(74, 105, 189, 0.3);
+        }
+
+        /* --- 遊戲主容器 --- */
+        .game-container {
+            flex: 1;
+            max-width: 800px;
+            width: 95%;
+            margin: 30px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .screen {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            animation: fadeIn 0.4s ease-out;
+            flex: 1;
+        }
+
+        .screen.active { display: flex; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 { color: var(--text-color); margin-bottom: 10px; }
+        h2 { color: var(--text-color); }
+        p { color: #666; line-height: 1.6; }
+
+        input[type="text"] {
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 300px;
+            margin: 20px 0;
+            text-align: center;
+            outline: none;
+        }
+        input[type="text"]:focus { border-color: var(--primary-color); }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.1s;
+            box-shadow: 0 4px 0 #d4b10b;
+            margin: 5px;
+            display: inline-block;
+            min-width: 100px;
+        }
+        .btn:active { transform: translateY(4px); box-shadow: 0 0 0 #d4b10b; }
+
+        .btn.secondary { background-color: #eee; box-shadow: 0 4px 0 #ccc; }
+        .btn.secondary:active { transform: translateY(4px); box-shadow: 0 0 0 #ccc; }
+
+        .btn.danger { background-color: #ffcccc; color: #c0392b; box-shadow: 0 4px 0 #e6b0aa; }
+        .btn.danger:active { transform: translateY(4px); box-shadow: 0 0 0 #e6b0aa; }
+
+        /* 選擇關卡樣式 */
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .select-card {
+            background: #fff;
+            border: 2px solid #eee;
+            border-radius: 15px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .select-card:hover { border-color: var(--primary-color); transform: translateY(-3px); }
+        .select-card.selected {
+            background-color: #fff9db;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(244, 208, 63, 0.3);
+        }
+        .select-card i { font-size: 2em; margin-bottom: 10px; display: block; }
+
+        .difficulty-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .diff-btn {
+            padding: 10px 20px;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .diff-btn.selected {
+            background: var(--primary-color);
+            border-color: #d4b10b;
+        }
+
+        /* 遊戲內介面 HUD */
+        .hud-bar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            background: #34495e;
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            box-shadow: 0 4px 0 #2c3e50;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .hud-item { display: flex; align-items: center; gap: 8px; }
+        .hud-item span { font-size: 1.2em; color: #F4D03F; }
+
+        /* Combo 樣式 */
+        .combo-box {
+            background: #e74c3c;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            display: none;
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            white-space: nowrap;
+        }
+        .combo-box.active { display: block; }
+        @keyframes popIn { from { transform: scale(0); } to { transform: scale(1); } }
+
+        /* 情境插圖卡 */
+        .scenario-card {
+            width: 100%;
+            height: 140px;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: -10px;
+            z-index: 1;
+        }
+
+        .scene-sky { background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%); }
+        .scene-road { background: linear-gradient(135deg, #304352 0%, #d7d2cc 100%); border-bottom: 10px dashed #fff; }
+        .scene-nature { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+        .scene-track { background: linear-gradient(to right, #e67e22, #f1c40f); }
+        .scene-water { background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%); }
+
+        .scenario-icon {
+            font-size: 5em;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .question-area {
+            background: #fff;
+            border: 2px solid #eee;
+            border-top: none;
+            padding: 20px;
+            border-radius: 0 0 20px 20px;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .q-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 2;
+            white-space: nowrap;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .option-card {
+            background: white;
+            border: 2px solid #eee;
+            padding: 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #555;
+            transition: 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            user-select: none;
+        }
+        .option-card:hover {
+            border-color: var(--primary-color);
+            background: #fffdf0;
+            transform: translateY(-2px);
+        }
+
+        /* 排行榜樣式 */
+        .leaderboard-box {
+            margin-top: 16px;
+            width: 100%;
+            max-width: 520px;
+            border-top: 2px solid #eee;
+            padding-top: 15px;
+        }
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+        .leaderboard-table th {
+            text-align: left;
+            padding: 8px;
+            color: #888;
+        }
+        .leaderboard-table td {
+            padding: 8px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .rank-1 { color: #f1c40f; font-weight: bold; }
+        .rank-2 { color: #95a5a6; font-weight: bold; }
+        .rank-3 { color: #d35400; font-weight: bold; }
+
+        .game-btn-group {
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* --- 暫停遮罩（遮蓋題目） --- */
+        .pause-overlay{
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(6px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            padding: 18px;
+        }
+        .pause-overlay.active{ display:flex; }
+        .pause-card{
+            width: min(520px, 92%);
+            background: rgba(255,255,255,.92);
+            border: 1px solid rgba(0,0,0,.08);
+            border-radius: 18px;
+            box-shadow: 0 20px 55px rgba(0,0,0,.25);
+            padding: 18px 16px;
+            text-align: center;
+        }
+        .pause-title{
+            font-size: 22px;
+            font-weight: 900;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+        .pause-sub{
+            color:#475569;
+            font-weight: 700;
+            margin: 0 0 12px;
+        }
+
+        /* ✅ 回饋 Toast（答對/答錯都會出現） */
+        .toast{
+            position: absolute;
+            left: 50%;
+            bottom: 18px;
+            transform: translateX(-50%);
+            width: min(640px, 92%);
+            background: rgba(255,255,255,.94);
+            border: 1px solid rgba(0,0,0,.08);
+            border-radius: 16px;
+            box-shadow: 0 14px 40px rgba(0,0,0,.14);
+            padding: 12px 14px;
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            z-index: 998;
+        }
+        .toast.active{ display:flex; }
+        .toast-left{
+            display:flex;
+            align-items:flex-start;
+            gap: 10px;
+            text-align:left;
+        }
+        .toast-emoji{ font-size: 22px; line-height: 1; margin-top: 2px; }
+        .toast-title{ font-weight: 900; color:#0f172a; margin-bottom: 2px; }
+        .toast-msg{ color:#475569; font-weight: 700; font-size: 14px; }
+        .toast-btn{
+            border: none;
+            background: var(--primary-color);
+            color:#000;
+            font-weight: 900;
+            padding: 10px 14px;
+            border-radius: 999px;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #d4b10b;
+            flex: 0 0 auto;
+        }
+        .toast-btn:active{ transform: translateY(4px); box-shadow: 0 0 0 #d4b10b; }
+
+        /* --- Footer（你指定的樣式） --- */
+        footer{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 18px 12px 26px;
+        }
+        .footer-pill{
+            width: min(980px, 96%);
+            background: rgba(255,255,255,.88);
+            border: 1px solid rgba(0,0,0,.06);
+            box-shadow: 0 10px 26px rgba(0,0,0,.08);
+            border-radius: 999px;
+            padding: 12px 16px;
+            display:flex;
+            align-items:center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .footer-left, .footer-right{
+            display:flex;
+            align-items:center;
+            gap: 10px;
+        }
+        .footer-dot{
+            width:10px;height:10px;border-radius:50%;
+            background: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(244,208,63,.25);
+        }
+        .footer-copy{
+            color:#334155;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .footer-icon{
+            width:28px;height:28px;border-radius: 10px;
+            display:flex;align-items:center;justify-content:center;
+            background: rgba(93,173,226,.18);
+            color:#2c3e50;
+        }
+        .footer-tagline{
+            color:#475569;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: .2px;
+        }
+
+        /* RWD Mobile */
+        @media (max-width: 600px) {
+            header { padding: 8px 15px; height: auto; }
+            .brand-name { font-size: 18px; }
+            .nav-item span { display: none; }
+            .nav-btn-outline span { display: inline; }
+
+            .options-grid { grid-template-columns: 1fr; }
+            .game-container { padding: 20px 15px; margin: 15px auto; width: 95%; }
+            .btn { flex: 1; padding: 12px 10px; font-size: 14px; }
+
+            .footer-pill{ border-radius: 22px; }
+        }
+
+        /* RWD Tablet */
+        @media (min-width: 601px) and (max-width: 900px){
+            header { padding: 10px 18px; height: auto; }
+            .game-container{ margin: 18px auto; padding: 22px; }
+            .hud-bar{ padding: 12px 14px; }
+            .option-card{ font-size: 1.1em; }
+            .footer-pill{ width: 94%; }
+        }
+
+        @media (min-width: 1200px){
+            .game-container{ max-width: 860px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo-circle">
+                <img src="JESSIEMATH-Q.png" alt="Logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4762/4762311.png'">
+            </div>
+            <div class="brand-name">Jessie Math</div>
+        </div>
+
+        <nav>
+            <a href="https://jessiemath0703-chu.github.io/website2/" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>首頁</span>
+            </a>
+            <a href="https://jessiemath0703-chu.github.io/Game-Lobby/" class="nav-item">
+                <i class="fas fa-gamepad"></i>
+                <span>遊戲大廳</span>
+            </a>
+            <a href="https://jessiemath0703-chu.github.io/Game-Lobby/#g6-u12" class="nav-btn-outline">
+                <i class="fas fa-chevron-left"></i>
+                <span>六年級速率</span>
+            </a>
+        </nav>
+    </header>
+
+    <div class="game-container">
+
+        <div id="screen-login" class="screen active">
+            <h1 style="font-size: 2.5em;">🏎️ 速率大挑戰PRO</h1>
+            <p>輸入你的代號，挑戰連擊 Combo！</p>
+            <input type="text" id="player-name" placeholder="請輸入名字 (最多10字)" maxlength="10">
+            <button class="btn" onclick="goToSelection()">下一步</button>
+        </div>
+
+        <div id="screen-selection" class="screen">
+            <h2>選擇修練主題</h2>
+            <div class="selection-grid">
+                <div class="select-card" onclick="selectLevel(1, this)">
+                    <i class="fas fa-rocket" style="color:#e67e22"></i>
+                    <div>Level 1<br>距離</div>
+                </div>
+                <div class="select-card" onclick="selectLevel(2, this)">
+                    <i class="fas fa-stopwatch" style="color:#3498db"></i>
+                    <div>Level 2<br>時間</div>
+                </div>
+                <div class="select-card" onclick="selectLevel(3, this)">
+                    <i class="fas fa-tachometer-alt" style="color:#e74c3c"></i>
+                    <div>Level 3<br>速率</div>
+                </div>
+                <div class="select-card" onclick="selectLevel(4, this)">
+                    <i class="fas fa-running" style="color:#2ecc71"></i>
+                    <div>Level 4<br>追趕</div>
+                </div>
+                <div class="select-card selected" onclick="selectLevel(5, this)">
+                    <i class="fas fa-random" style="color:#9b59b6"></i>
+                    <div>Level 5<br>混合挑戰</div>
+                </div>
+            </div>
+
+            <h2>選擇車速 (難度)</h2>
+            <div class="difficulty-options">
+                <button class="diff-btn" onclick="selectDiff('easy', this)">😊 輕鬆</button>
+                <button class="diff-btn selected" onclick="selectDiff('normal', this)">😐 標準</button>
+                <button class="diff-btn" onclick="selectDiff('hard', this)">🔥 極速</button>
+            </div>
+
+            <div class="leaderboard-box">
+                <h3>🏆 英雄榜</h3>
+                <table class="leaderboard-table" id="selection-leaderboard"></table>
+            </div>
+
+            <div class="game-btn-group">
+                <button class="btn secondary" onclick="switchScreen('screen-login')">返回</button>
+                <button class="btn" onclick="startGame()">開始 GO!</button>
+            </div>
+        </div>
+
+        <div id="screen-game" class="screen">
+            <div class="hud-bar">
+                <div class="hud-item"><i class="fas fa-user"></i> <span id="hud-name">Player</span></div>
+                <div class="hud-item">
+                    <i class="fas fa-star"></i>
+                    <span id="hud-score">0</span>
+                    <div id="combo-display" class="combo-box">Combo x2!</div>
+                </div>
+                <div class="hud-item"><i class="fas fa-clock"></i> <span id="hud-timer">00:00</span></div>
+            </div>
+
+            <div class="scenario-card" id="scene-bg">
+                <div class="scenario-icon" id="q-emoji">🚀</div>
+            </div>
+
+            <div class="question-area">
+                <div class="q-badge" id="q-title">題目主題</div>
+                <div id="q-text" style="font-size: 1.4em; margin: 15px 0; font-weight: bold; color:#2c3e50;">
+                    題目載入中...
+                </div>
+
+                <div class="options-grid" id="q-options"></div>
+            </div>
+
+            <div class="game-btn-group">
+                <button class="btn secondary" onclick="backToMenu()">≡ 選關卡</button>
+                <button class="btn secondary" onclick="pauseGame()">暫停</button>
+                <button class="btn danger" onclick="restartGame()">重來</button>
+            </div>
+
+            <div id="pause-overlay" class="pause-overlay" aria-hidden="true">
+                <div class="pause-card">
+                    <div class="pause-title">⏸️ 暫停中</div>
+                    <p class="pause-sub">題目先躲起來～休息一下再回來帥一波 😎</p>
+                    <div class="game-btn-group" style="margin-top:10px;">
+                        <button class="btn" onclick="pauseGame()">繼續</button>
+                        <button class="btn secondary" onclick="restartGame()">重來</button>
+                        <button class="btn secondary" onclick="backToMenu()">回選關卡</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ✅ 答題回饋 Toast（不改版面，只浮在底部） -->
+            <div id="toast" class="toast" aria-live="polite">
+                <div class="toast-left">
+                    <div id="toast-emoji" class="toast-emoji">✅</div>
+                    <div>
+                        <div id="toast-title" class="toast-title">太猛了！</div>
+                        <div id="toast-msg" class="toast-msg">準備下一題～</div>
+                    </div>
+                </div>
+                <button id="toast-btn" class="toast-btn" onclick="toastNext()">下一題</button>
+            </div>
+        </div>
+
+        <div id="screen-result" class="screen">
+            <h1>時間到！</h1>
+
+            <div class="stars-display" id="result-stars">
+                <span>★</span><span>★</span><span>★</span>
+            </div>
+
+            <h2>得分: <span id="final-score" style="color:var(--accent-color);">0</span></h2>
+            <p id="feedback-msg">評語...</p>
+
+            <div class="game-btn-group">
+                <button class="btn" onclick="switchScreen('screen-selection')">再玩一次</button>
+                <button class="btn secondary" onclick="window.location.href='https://jessiemath0703-chu.github.io/website2/'">回首頁</button>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-pill">
+            <div class="footer-left">
+                <div class="footer-dot" aria-hidden="true"></div>
+                <div class="footer-copy">© 2025–2026 Jessie Math 捷析老師. All rights reserved.</div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-icon" aria-hidden="true"><i class="fas fa-compass"></i></div>
+                <div class="footer-tagline">數學不迷路，Jessie 帶你走向理解。</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- 遊戲資料 ---
+        let gameState = {
+            name: "Player",
+            score: 0,
+            combo: 0,
+            time: 0,
+            timerId: null,
+            level: 5,
+            difficulty: 'normal',
+            isPaused: false,
+            currentQ: null
+        };
+
+        const BASE_TIME = 60;
+
+        // ✅ 回饋控制：顯示後「按下一題」才會出題（符合：答對/答錯都要回饋，再進下一題）
+        let awaitingNext = false;
+        let pendingNextFn = null;
+
+        function switchScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+            if(screenId !== 'screen-game') hidePauseOverlay();
+            hideToast();
+        }
+
+        function goToSelection() {
+            const name = document.getElementById('player-name').value.trim();
+            if(!name) { alert("請輸入名字！"); return; }
+            gameState.name = name;
+            switchScreen('screen-selection');
+            renderLeaderboard('selection-leaderboard');
+        }
+
+        function selectLevel(lvl, el) {
+            gameState.level = lvl;
+            document.querySelectorAll('.select-card').forEach(c => c.classList.remove('selected'));
+            el.classList.add('selected');
+        }
+
+        function selectDiff(diff, el) {
+            gameState.difficulty = diff;
+            document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('selected'));
+            el.classList.add('selected');
+        }
+
+        function startGame() {
+            gameState.score = 0;
+            gameState.combo = 0;
+            updateComboUI();
+
+            if(gameState.difficulty === 'easy') gameState.time = Math.round(BASE_TIME * 1.5);
+            else if(gameState.difficulty === 'hard') gameState.time = Math.round(BASE_TIME * 0.8);
+            else gameState.time = BASE_TIME;
+
+            gameState.isPaused = false;
+            hidePauseOverlay();
+
+            awaitingNext = false;
+            pendingNextFn = null;
+            hideToast();
+
+            document.getElementById('hud-name').textContent = gameState.name;
+            switchScreen('screen-game');
+
+            generateNextQuestion();   // ✅ 先出第一題
+            startTimer();
+        }
+
+        function restartGame() {
+            if(confirm("確定要重來嗎？目前分數會歸零喔！")) {
+                clearInterval(gameState.timerId);
+                startGame();
+            }
+        }
+
+        function backToMenu() {
+            if(confirm("確定要結束目前遊戲，回到主題選單嗎？")) {
+                clearInterval(gameState.timerId);
+                gameState.isPaused = false;
+                hidePauseOverlay();
+                awaitingNext = false;
+                pendingNextFn = null;
+                hideToast();
+                switchScreen('screen-selection');
+                renderLeaderboard('selection-leaderboard');
+            }
+        }
+
+        function startTimer() {
+            if(gameState.timerId) clearInterval(gameState.timerId);
+            updateTimerUI();
+            gameState.timerId = setInterval(() => {
+                if(!gameState.isPaused) {
+                    gameState.time--;
+                    updateTimerUI();
+                    if(gameState.time <= 0) endGame();
+                }
+            }, 1000);
+        }
+
+        function updateTimerUI() {
+            let m = Math.floor(gameState.time / 60);
+            let s = Math.floor(gameState.time % 60);
+            document.getElementById('hud-timer').textContent =
+                `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+
+            if(gameState.time < 10) document.getElementById('hud-timer').style.color = '#e74c3c';
+            else document.getElementById('hud-timer').style.color = 'white';
+        }
+
+        function showPauseOverlay(){
+            const o = document.getElementById('pause-overlay');
+            if(o){ o.classList.add('active'); o.setAttribute('aria-hidden','false'); }
+        }
+        function hidePauseOverlay(){
+            const o = document.getElementById('pause-overlay');
+            if(o){ o.classList.remove('active'); o.setAttribute('aria-hidden','true'); }
+        }
+
+        function pauseGame() {
+            gameState.isPaused = !gameState.isPaused;
+            if(gameState.isPaused){
+                showPauseOverlay();
+            }else{
+                hidePauseOverlay();
+            }
+        }
+
+        function updateComboUI() {
+            const box = document.getElementById('combo-display');
+            if (gameState.combo > 1) {
+                box.textContent = `🔥 Combo x${gameState.combo}`;
+                box.classList.add('active');
+                box.style.animation = 'none';
+                box.offsetHeight;
+                box.style.animation = 'popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            } else {
+                box.classList.remove('active');
+            }
+        }
+
+        // ✅ Toast：答對回饋 / 答錯給正確答案（然後按下一題再進下一題）
+        function showToast({emoji, title, msg, btnText="下一題"}){
+            const t = document.getElementById('toast');
+            document.getElementById('toast-emoji').textContent = emoji;
+            document.getElementById('toast-title').textContent = title;
+            document.getElementById('toast-msg').innerHTML = msg;
+            document.getElementById('toast-btn').textContent = btnText;
+            t.classList.add('active');
+        }
+        function hideToast(){
+            const t = document.getElementById('toast');
+            if(t) t.classList.remove('active');
+        }
+        function toastNext(){
+            if(!awaitingNext) return;
+            hideToast();
+            awaitingNext = false;
+            const fn = pendingNextFn;
+            pendingNextFn = null;
+            if(typeof fn === "function") fn();
+        }
+
+        // --- 題目隨機 + 變化（保持你上一版） ---
+        function generateNextQuestion() {
+            let type = gameState.level === 5 ? Math.floor(Math.random()*6)+1 : gameState.level;
+            let q = {};
+
+            const randItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+            const rdm = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
+
+            if(type === 1) {
+                const scenarios = [
+                    { name: "火箭", emoji: "🚀", speed: [500, 900], time: [2, 5], scene: "scene-sky", unitS:"公里/時", unitT:"小時", unitA:"公里" },
+                    { name: "高鐵", emoji: "🚅", speed: [200, 300], time: [2, 4], scene: "scene-track", unitS:"公里/時", unitT:"小時", unitA:"公里" },
+                    { name: "獵豹", emoji: "🐆", speed: [60, 110], time: [2, 5], scene: "scene-nature", unitS:"公里/時", unitT:"小時", unitA:"公里" },
+                    { name: "老鷹", emoji: "🦅", speed: [100, 150], time: [3, 6], scene: "scene-sky", unitS:"公里/時", unitT:"小時", unitA:"公里" },
+                    { name: "媽媽健走", emoji: "🚶‍♀️", speed: [60, 120], time: [10, 30], scene: "scene-road", unitS:"公尺/分", unitT:"分鐘", unitA:"公尺" },
+                    { name: "跑步訓練", emoji: "🏃‍♂️", speed: [120, 220], time: [10, 25], scene: "scene-track", unitS:"公尺/分", unitT:"分鐘", unitA:"公尺" }
+                ];
+                let sObj = randItem(scenarios);
+                let s = rdm(sObj.speed[0], sObj.speed[1]);
+                let t = rdm(sObj.time[0], sObj.time[1]);
+                q = {
+                    ...sObj,
+                    title: "Level 1: 距離計算",
+                    text: `${sObj.name}的速率是 <b>${s} ${sObj.unitS}</b>，<br>持續移動了 <b>${t} ${sObj.unitT}</b>。<br>請問移動了多遠？`,
+                    ans: s * t,
+                    unit: sObj.unitA,
+                    opts: genOpts(s*t, Math.max(3, Math.round((s*t)*0.08)))
+                };
+            }
+            else if(type === 2) {
+                const scenarios = [
+                    { name: "外送員", emoji: "🛵", speed: [400, 600], scene: "scene-road", unitS:"公尺/分", unitA:"分鐘" },
+                    { name: "騎腳踏車", emoji: "🚲", speed: [200, 300], scene: "scene-nature", unitS:"公尺/分", unitA:"分鐘" },
+                    { name: "遊艇", emoji: "🚤", speed: [50, 80], scene: "scene-water", unitS:"公里/時", unitA:"小時" },
+                    { name: "公園健走", emoji: "🚶", speed: [80, 120], scene: "scene-road", unitS:"公尺/分", unitA:"分鐘" }
+                ];
+                let sObj = randItem(scenarios);
+                let timeAns = rdm(4, 15);
+                let speed = rdm(sObj.speed[0], sObj.speed[1]);
+
+                let dist, distUnit, text;
+                if(sObj.unitS === "公里/時"){
+                    dist = speed * timeAns;
+                    distUnit = "公里";
+                    text = `${sObj.name}要移動 <b>${dist} ${distUnit}</b>，<br>速率是 <b>${speed} ${sObj.unitS}</b>。<br>請問需要幾小時？`;
+                }else{
+                    dist = speed * timeAns;
+                    distUnit = "公尺";
+                    text = `${sObj.name}要移動 <b>${dist} ${distUnit}</b>，<br>速率是 <b>${speed} ${sObj.unitS}</b>。<br>請問需要幾分鐘？`;
+                }
+
+                q = {
+                    ...sObj,
+                    title: "Level 2: 時間計算",
+                    text,
+                    ans: timeAns,
+                    unit: sObj.unitA,
+                    opts: genOpts(timeAns, 3)
+                };
+            }
+            else if(type === 3) {
+                const scenarios = [
+                    { name: "烏龜", emoji: "🐢", unit: "公分/秒", scene: "scene-nature", mode:"basic" },
+                    { name: "跑車", emoji: "🏎️", unit: "公尺/秒", scene: "scene-road", mode:"basic" },
+                    { name: "人造衛星", emoji: "🛰️", unit: "公里/秒", scene: "scene-sky", mode:"basic" },
+                    { name: "去回跑步", emoji: "🔁", unit: "公尺/分", scene: "scene-track", mode:"avg_roundtrip" },
+                    { name: "旅程平均", emoji: "🧭", unit: "公里/時", scene: "scene-road", mode:"avg_total" }
+                ];
+                let sObj = randItem(scenarios);
+
+                if(sObj.mode === "basic"){
+                    let time = rdm(5, 20);
+                    let speed = rdm(10, 50);
+                    let dist = speed * time;
+                    q = {
+                        ...sObj,
+                        title: "Level 3: 速率計算",
+                        text: `${sObj.name}移動了 <b>${dist}</b>（距離），<br>花了 <b>${time} 秒</b>。<br>請問速率是多少？`,
+                        ans: speed,
+                        unit: sObj.unit,
+                        opts: genOpts(speed, 6)
+                    };
+                }
+                else if(sObj.mode === "avg_roundtrip"){
+                    let distOneWay = randItem([2400, 3000, 3600, 4200]);
+                    let v1 = randItem([150, 180, 200, 240]);
+                    let v2 = randItem([100, 120, 140, 160]);
+                    if(distOneWay % v1 !== 0 || distOneWay % v2 !== 0){
+                        distOneWay = 3600; v1 = 180; v2 = 120;
+                    }
+                    let t1 = distOneWay / v1;
+                    let t2 = distOneWay / v2;
+                    let avg = Math.round((distOneWay*2) / (t1 + t2));
+                    q = {
+                        ...sObj,
+                        title: "Level 3: 平均速率",
+                        text: `哥哥去超市距離 <b>${distOneWay} 公尺</b>，去程速率 <b>${v1} 公尺/分</b>，回程速率 <b>${v2} 公尺/分</b>。<br>請問全程平均速率是多少？`,
+                        ans: avg,
+                        unit: "公尺/分",
+                        opts: genOpts(avg, 12)
+                    };
+                }
+                else {
+                    let totalMin = randItem([40, 50, 60, 75, 90, 120]);
+                    let speed = randItem([45, 50, 55, 60, 62, 70]);
+                    let dist = Math.round(speed * (totalMin/60));
+                    if(!Number.isInteger(dist)){
+                        totalMin = 40; dist = 38; speed = 57;
+                    }
+                    q = {
+                        ...sObj,
+                        title: "Level 3: 平均速率",
+                        text: `爸爸從家裡到公司距離 <b>${dist} 公里</b>，共花了 <b>${totalMin} 分鐘</b>。<br>請問平均速率是多少？`,
+                        ans: speed,
+                        unit: "公里/時",
+                        opts: genOpts(speed, 10)
+                    };
+                }
+            }
+            else if(type === 4) {
+                const scenarios = [
+                    { ch1: "小偷", ch2: "警察", emoji: "🚓", scene: "scene-road" },
+                    { ch1: "烏龜", ch2: "兔子", emoji: "🐇", scene: "scene-nature" },
+                    { ch1: "弟弟", ch2: "哥哥", emoji: "🏃", scene: "scene-track" },
+                    { ch1: "機車", ch2: "跑車", emoji: "🏍️", scene: "scene-road" }
+                ];
+                let sObj = randItem(scenarios);
+
+                let vSlow = rdm(50, 120);
+                let diff = rdm(20, 60);
+                let vFast = vSlow + diff;
+
+                let catchTime = rdm(3, 12);
+                let distGap = catchTime * diff;
+
+                q = {
+                    ...sObj,
+                    title: "Level 4: 追趕問題",
+                    text: `${sObj.ch1}分速 <b>${vSlow}m</b>，${sObj.ch2}分速 <b>${vFast}m</b>。<br>${sObj.ch1}已經先跑了 <b>${distGap} 公尺</b>。<br>${sObj.ch2}幾分鐘後追上？`,
+                    ans: catchTime,
+                    unit: "分鐘",
+                    scene: sObj.scene,
+                    opts: genOpts(catchTime, 2)
+                };
+            }
+            else if(type === 5) {
+                const sub = randItem(["sameDist", "sameTime", "unitCompare"]);
+                if(sub === "sameDist"){
+                    let dist = randItem([100, 200, 300, 500]);
+                    let t1 = rdm(12, 30);
+                    let t2 = t1 + rdm(1, 6);
+                    q = {
+                        emoji: "🏁",
+                        title: "速率比較：同距離",
+                        text: `甲、乙都跑 <b>${dist} 公尺</b>。<br>甲花 <b>${t1} 秒</b>，乙花 <b>${t2} 秒</b>。<br>誰的速率比較快？`,
+                        ans: (t1 < t2) ? "甲" : "乙",
+                        unit: "",
+                        scene: "scene-track",
+                        opts: shuffle(["甲", "乙", "一樣快", "無法比較"]),
+                        special: "whoFaster"
+                    };
+                } else if(sub === "sameTime"){
+                    let time = randItem([30, 40, 50, 60]);
+                    let d1 = rdm(200, 800);
+                    let d2 = d1 + rdm(50, 250);
+                    q = {
+                        emoji: "⏱️",
+                        title: "速率比較：同時間",
+                        text: `甲、乙都跑 <b>${time} 秒</b>。<br>甲跑 <b>${d1} 公尺</b>，乙跑 <b>${d2} 公尺</b>。<br>誰的速率比較快？`,
+                        ans: "乙",
+                        unit: "",
+                        scene: "scene-road",
+                        opts: shuffle(["甲", "乙", "一樣快", "無法比較"]),
+                        special: "whoFaster"
+                    };
+                } else {
+                    const pairs = [
+                        { a: {v:150, u:"公尺/分"}, b:{v:200, u:"公分/秒"}, faster:"A" },
+                        { a: {v:5.1, u:"公里/時"}, b:{v:80, u:"公尺/分"}, faster:"A" },
+                        { a: {v:54, u:"公里/時"}, b:{v:24, u:"公尺/秒"}, faster:"B" },
+                        { a: {v:100, u:"公分/秒"}, b:{v:3.42, u:"公里/時"}, faster:"A" }
+                    ];
+                    let p = randItem(pairs);
+                    q = {
+                        emoji: "⚖️",
+                        title: "速率比較：單位換算",
+                        text: `下列哪一個速率比較快？<br><b>A：</b>${p.a.v} ${p.a.u}<br><b>B：</b>${p.b.v} ${p.b.u}`,
+                        ans: p.faster,
+                        unit: "",
+                        scene: "scene-nature",
+                        opts: shuffle(["A", "B", "一樣快", "無法比較"]),
+                        special: "whichFaster",
+                        meta: p
+                    };
+                }
+            }
+            else {
+                const sub = randItem(["convert", "echo", "tunnel", "fractionLeft"]);
+                if(sub === "convert"){
+                    let kmh = randItem([18, 36, 54, 72, 90]);
+                    let mPerMin = kmh * 1000 / 60;
+                    q = {
+                        emoji: "🔄",
+                        title: "單位換算",
+                        text: `把 <b>時速 ${kmh} 公里</b>換算成 <b>公尺/分</b> 是多少？`,
+                        ans: mPerMin,
+                        unit: "公尺/分",
+                        scene: "scene-sky",
+                        opts: genOpts(mPerMin, Math.max(20, Math.round(mPerMin*0.08)))
+                    };
+                }
+                else if(sub === "echo"){
+                    let speed = 1500;
+                    let sec = randItem([6, 8, 10, 12]);
+                    let distM = speed * sec / 2;
+                    let distKm = distM / 1000;
+                    q = {
+                        emoji: "🐬",
+                        title: "回聲定位",
+                        text: `海豚利用回聲定位，聲音在海水中速率約 <b>${speed} 公尺/秒</b>。<br>發出聲音後 <b>${sec} 秒</b>收到回聲，獵物距離海豚多少公里？`,
+                        ans: distKm,
+                        unit: "公里",
+                        scene: "scene-water",
+                        opts: genOpts(distKm, 2)
+                    };
+                }
+                else if(sub === "tunnel"){
+                    let train = randItem([240, 290, 320]);
+                    let tunnel = randItem([180, 210, 250]);
+                    let kmh = randItem([72, 90, 108]);
+                    let ms = kmh * 1000 / 3600;
+                    let totalM = train + tunnel;
+                    let sec = totalM / ms;
+                    q = {
+                        emoji: "🚆",
+                        title: "隧道火車",
+                        text: `火車長 <b>${train} 公尺</b>，隧道長 <b>${tunnel} 公尺</b>，火車時速 <b>${kmh} 公里</b>。<br>從車頭進入隧道到車尾完全離開，共花幾秒？`,
+                        ans: sec,
+                        unit: "秒",
+                        scene: "scene-track",
+                        opts: genOpts(sec, 6)
+                    };
+                }
+                else {
+                    let total = 2400;
+                    let fracNum = 5;
+                    let fracDen = 8;
+                    let usedMin = 20;
+                    let speed = total * fracNum / fracDen / usedMin;
+                    let left = total * (1 - fracNum/fracDen);
+                    let need = left / speed;
+                    q = {
+                        emoji: "🚶‍♂️",
+                        title: "挑戰：走完幾分之幾",
+                        text: `甲、乙兩地相距 <b>${total} 公尺</b>。<br>新一花 <b>${usedMin} 分鐘</b>走完 <b>${fracNum}/${fracDen}</b> 的路程。<br>維持同樣速率，剩下的路程還要幾分鐘？`,
+                        ans: need,
+                        unit: "分鐘",
+                        scene: "scene-road",
+                        opts: genOpts(need, 3)
+                    };
+                }
+            }
+
+            gameState.currentQ = q;
+            renderQuestion(q);
+        }
+
+        function genOpts(ans, variance) {
+            let set = new Set([ans]);
+            let safeGuard = 0;
+            while(set.size < 4 && safeGuard < 90) {
+                let diff = (Math.floor(Math.random() * (variance * 2 + 1)) - variance);
+                let fake = ans + diff;
+                if(fake > 0 && fake !== ans) set.add(fake);
+                safeGuard++;
+            }
+            while(set.size < 4) set.add(ans + set.size + 1);
+            return Array.from(set).sort(() => Math.random()-0.5);
+        }
+
+        function shuffle(arr){
+            return arr.slice().sort(() => Math.random() - 0.5);
+        }
+
+        function renderQuestion(q) {
+            const sceneEl = document.getElementById('scene-bg');
+            sceneEl.className = 'scenario-card ' + (q.scene || 'scene-nature');
+
+            document.getElementById('q-emoji').textContent = q.emoji || "✨";
+            document.getElementById('q-title').textContent = q.title || "題目";
+            document.getElementById('q-text').innerHTML = q.text || "題目載入中...";
+            document.getElementById('hud-score').textContent = Math.floor(gameState.score);
+
+            const box = document.getElementById('q-options');
+            box.innerHTML = '';
+
+            q.opts.forEach(opt => {
+                let btn = document.createElement('div');
+                btn.className = 'option-card';
+                btn.innerHTML = (q.unit ? `${opt} <small>${q.unit}</small>` : `${opt}`);
+                btn.onclick = () => checkAnsUnified(opt);
+                box.appendChild(btn);
+            });
+        }
+
+        // ✅ 統一判斷（數值題 / 文字題 都可以）
+        function isCorrect(choice, q){
+            // 文字題：ans 是字串
+            if(typeof q.ans === "string"){
+                return String(choice) === q.ans;
+            }
+            // 數值題：允許小數誤差
+            const a = Number(q.ans);
+            const c = Number(choice);
+            if(Number.isNaN(a) || Number.isNaN(c)) return false;
+            return Math.abs(a - c) < 1e-9;
+        }
+
+        function prettyAnswer(q){
+            if(typeof q.ans === "string") return q.ans;
+            const n = Number(q.ans);
+            const val = Number.isInteger(n) ? n : (Math.round(n*100)/100);
+            return q.unit ? `${val} ${q.unit}` : `${val}`;
+        }
+
+        // ✅ 答對：給回饋 → 下一題
+        // ✅ 答錯：給正確答案 → 下一題
+        function checkAnsUnified(choice){
+            if(gameState.isPaused) return;
+            if(awaitingNext) return; // 防連點
+
+            const q = gameState.currentQ;
+            const correct = isCorrect(choice, q);
+
+            if(correct){
+                gameState.combo++;
+
+                let base = 100;
+                if(gameState.difficulty === 'hard') base = 150;
+                if(gameState.difficulty === 'easy') base = 80;
+
+                let multiplier = 1 + (gameState.combo * 0.1);
+                gameState.score += (base * multiplier);
+
+                updateComboUI();
+                document.getElementById('hud-score').textContent = Math.floor(gameState.score);
+
+                const praises = [
+                    "漂亮！這題像在你手心滑過 ✨",
+                    "超穩！速率都被你拿捏 😎",
+                    "Nice！腦袋像渦輪一樣轉 🔥",
+                    "神操作！Jessie 直接給你一個讚 👍"
+                ];
+                const pick = praises[Math.floor(Math.random()*praises.length)];
+
+                awaitingNext = true;
+                pendingNextFn = () => generateNextQuestion();
+                showToast({
+                    emoji: "✅",
+                    title: "答對啦！",
+                    msg: `${pick}<br><span style="opacity:.85">Combo：x${gameState.combo}　+分數已入帳</span>`,
+                    btnText: "下一題"
+                });
+
+            } else {
+                gameState.combo = 0;
+                updateComboUI();
+
+                gameState.time -= 10;
+                if(gameState.time < 0) gameState.time = 0;
+                updateTimerUI();
+
+                const correctText = prettyAnswer(q);
+
+                awaitingNext = true;
+                pendingNextFn = () => {
+                    // 若時間被扣到 0，直接結算
+                    if(gameState.time <= 0) endGame();
+                    else generateNextQuestion();
+                };
+
+                showToast({
+                    emoji: "❌",
+                    title: "差一點點～",
+                    msg: `正確答案是：<b>${correctText}</b><br><span style="opacity:.85">Combo 歸零，時間 -10 秒</span>`,
+                    btnText: (gameState.time <= 0 ? "結算" : "下一題")
+                });
+            }
+        }
+
+        function endGame() {
+            clearInterval(gameState.timerId);
+            gameState.isPaused = false;
+            hidePauseOverlay();
+            hideToast();
+            awaitingNext = false;
+            pendingNextFn = null;
+
+            switchScreen('screen-result');
+
+            let finalScore = Math.floor(gameState.score);
+            document.getElementById('final-score').textContent = finalScore;
+
+            let stars = 1;
+            if(finalScore > 800) stars = 2;
+            if(finalScore > 1500) stars = 3;
+
+            const starContainer = document.getElementById('result-stars');
+            starContainer.innerHTML = '';
+            for(let i=0; i<3; i++) {
+                let span = document.createElement('span');
+                span.textContent = '★';
+                if(i < stars) span.className = 'filled';
+                starContainer.appendChild(span);
+            }
+
+            let msg = "";
+            if(stars === 3) msg = "太神啦！你是數學超人！🏆";
+            else if(stars === 2) msg = "很棒喔！再一點點就滿分了！✨";
+            else msg = "再接再厲，下次會更好！💪";
+            document.getElementById('feedback-msg').textContent = msg;
+
+            saveScore(gameState.name, finalScore);
+            renderLeaderboard('selection-leaderboard'); // 更新
+        }
+
+        function saveScore(name, score) {
+            let scores = JSON.parse(localStorage.getItem('jessieMathSpeedScores') || '[]');
+            scores.push({ name: name, score: score, date: new Date().toLocaleDateString() });
+            scores.sort((a, b) => b.score - a.score);
+            scores = scores.slice(0, 5);
+            localStorage.setItem('jessieMathSpeedScores', JSON.stringify(scores));
+        }
+
+        function renderLeaderboard(tableId) {
+            const table = document.getElementById(tableId);
+            if(!table) return;
+            const scores = JSON.parse(localStorage.getItem('jessieMathSpeedScores') || '[]');
+            let html = `<tr><th>排名</th><th>名字</th><th>分數</th></tr>`;
+            if(scores.length === 0) {
+                html += `<tr><td colspan="3" style="text-align:center; color:#999;">目前還沒有紀錄</td></tr>`;
+            } else {
+                scores.forEach((s, index) => {
+                    let rankClass = index === 0 ? 'rank-1' : (index === 1 ? 'rank-2' : (index === 2 ? 'rank-3' : ''));
+                    let rankIcon = index === 0 ? '🥇' : (index === 1 ? '🥈' : (index === 2 ? '🥉' : index + 1));
+                    html += `<tr class="${rankClass}"><td>${rankIcon}</td><td>${s.name}</td><td>${s.score}</td></tr>`;
+                });
+            }
+            table.innerHTML = html;
+        }
+
+        // 初始：選關卡頁會再 render，一開始先備用
+        renderLeaderboard('selection-leaderboard');
+    </script>
+</body>
+</html>
